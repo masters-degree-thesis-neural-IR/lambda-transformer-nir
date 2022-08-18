@@ -4,6 +4,7 @@ version: 0.2
 
 env:
   variables:
+    REGION: "us-east-1"
     ENVIRONMENT: "development"
     SERVICE_NAME: "lambda-transformer-nir"
     ERC: "149501088887.dkr.ecr.us-east-1.amazonaws.com"
