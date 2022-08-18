@@ -29,7 +29,8 @@ phases:
       - echo Building the Docker image...
       - ls
       - mkdir model
-      - python3 modeldownload.py
+      - pip3 install sentence-transformers
+      - python modeldownload.py
       - docker build -t lambda-transformer-nir .
       - docker push 149501088887.dkr.ecr.us-east-1.amazonaws.com/lambda-transformer-nir:latest
   post_build:
