@@ -37,4 +37,4 @@ phases:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - docker docker push 149501088887.dkr.ecr.us-east-1.amazonaws.com/lambda-transformer-nir:latest
+      - docker push 149501088887.dkr.ecr.us-east-1.amazonaws.com/lambda-transformer-nir:latest
