@@ -4,25 +4,26 @@ import requests
 import numpy as np
 import time
 
-from sentence_transformers import SentenceTransformer
+# from sentence_transformers import SentenceTransformer
 
 # instalar o rust
 # curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # pip install --upgrade pip
 
-model = SentenceTransformer('./model')
+# model = SentenceTransformer('./model')
 
 
 def lambda_handler(event, context):
     # json_region = os.environ['AWS_REGION']
 
-    sentence = event.get("sentence")
-    sentence_embeddings = model.encode([sentence])
+    # sentence = event.get("sentence")
+    # sentence_embeddings = model.encode([sentence])
+    # json.dumps(str(sentence_embeddings[0]))
 
     return {
         "statusCode": 200,
-        "embedding": json.dumps(str(sentence_embeddings[0]))
+        "embedding": "Olá mundo"
     }
 
 
