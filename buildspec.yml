@@ -20,7 +20,7 @@ phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
-      - aws ecr get-login-password --region $REGION | docker login --username AWS --password-stdin $ECR
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 149501088887.dkr.ecr.us-east-1.amazonaws.com
   build:
     commands:
       - echo ***** AMBIENTE ******
@@ -30,8 +30,8 @@ phases:
       - ls
       - mkdir model
       - python modeldownload.py
-      - docker build -t $SERVICE_NAME .
-      - docker tag $SERVICE_NAME:latest $ECR/$SERVICE_NAME:$TAG
+      - docker build -t lambda-transformer-nir .
+      - docker push 149501088887.dkr.ecr.us-east-1.amazonaws.com/lambda-transformer-nir:latest
   post_build:
     commands:
       - echo Build completed on `date`
