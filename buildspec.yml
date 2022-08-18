@@ -28,9 +28,9 @@ phases:
       - echo Build started on `date`
       - echo Building the Docker image...
       - ls
-#      - mkdir model
-#      - pip3 install sentence-transformers
-#      - python modeldownload.py
+      - mkdir model
+      - pip3 install sentence-transformers
+      - python modeldownload.py
       - docker build -t lambda-transformer-nir .
       - docker tag lambda-transformer-nir:latest 149501088887.dkr.ecr.us-east-1.amazonaws.com/lambda-transformer-nir:latest
   post_build:
