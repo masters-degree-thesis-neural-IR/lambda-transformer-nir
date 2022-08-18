@@ -32,9 +32,9 @@ phases:
       - pip3 install sentence-transformers
       - python modeldownload.py
       - docker build -t lambda-transformer-nir .
-      - docker push 149501088887.dkr.ecr.us-east-1.amazonaws.com/lambda-transformer-nir:latest
+      - docker tag lambda-transformer-nir:latest 149501088887.dkr.ecr.us-east-1.amazonaws.com/lambda-transformer-nir:latest
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - docker push $ECR/$SERVICE_NAME:$TAG
+      - docker docker push 149501088887.dkr.ecr.us-east-1.amazonaws.com/lambda-transformer-nir:latest
