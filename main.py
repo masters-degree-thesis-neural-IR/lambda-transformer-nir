@@ -1,9 +1,9 @@
 # import os
-# import json
 # import requests
 # import numpy as np
 # import time
 
+import json
 from sentence_transformers import SentenceTransformer
 
 # instalar o rust
@@ -17,15 +17,13 @@ model = SentenceTransformer('./model')
 def lambda_handler(event, context):
     # json_region = os.environ['AWS_REGION']
 
-    # sentence = event.get("sentence")
-    # sentence_embeddings = model.encode([sentence])
-    # json.dumps(str(sentence_embeddings[0]))
+    sentence = event.get("sentence")
+    sentence_embeddings = model.encode([sentence])
 
     return {
         "statusCode": 200,
-        "embedding": "Olá mundo"
+        "embedding": json.dumps(str(sentence_embeddings[0]))
     }
-
 
 # Press the green button in the gutter to run the script.
 # if __name__ == '__main__':
