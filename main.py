@@ -9,7 +9,6 @@ from sentence_transformers import SentenceTransformer
 # instalar o rust
 # curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-# pip install --upgrade pip
 
 model = SentenceTransformer('./model')
 
